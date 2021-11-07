@@ -1,0 +1,30 @@
+.SiteNav {
+    display: flex;
+    list-style: none;
+        
+    &--vertical {
+        flex-flow: column;
+    }
+    
+    &__listItem {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+        
+        &--vertical {
+            &:not(:last-child) {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+    &__item {
+        line-height: 1.2;
+        color: $color-gray;
+        
+        &hover,
+        &focus,
+        &:active {
+            color: $color-black;
+        }
+    }
+}

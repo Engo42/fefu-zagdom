@@ -1,0 +1,80 @@
+.Header {
+    display: flex;
+    align-items: center;
+    padding-y: 24px;
+    
+    &__logo {
+        width: 160px;
+        margin-right: 6.3%;
+        
+        @media (max-width: 1220px) {
+            margin-right: auto;
+        }
+        @media (max-width: 710px) {        
+            img {
+                height: 33px;
+            }
+        }
+    }
+    
+    &__menu {        
+        @media (max-width: 1136px) {
+            display: none;
+        }
+    }
+    
+    &__phone {
+        margin-x: auto 24px;
+        
+        @media (max-width: 710px) {
+            display: none;
+        }
+    }
+    
+    &__button {    
+        @media (max-width: 710px) {
+            display: none;
+        }    
+    }
+    
+    &__offCanvasButton {    
+        margin-left: 24px;
+        
+        @media (min-width: 1137px) {
+            display: none;
+        }    
+        @media (max-width: 710px) {    
+            img {
+                display: block;
+            }
+            button {
+                padding: 15px;
+            }
+        }    
+    }
+}
+.OffCanvas {
+    &__content {    
+        display: flex;
+        flex-flow: column;
+        padding: 105px 21px 54px;
+        background-color: $color-green;
+    }
+
+    &__close {
+        top: 31px;
+        right: 39px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        border: 0px;
+        padding: 10px;
+        cursor: pointer;
+        img {
+            display: block;
+        }
+    }
+    
+    &__contacts {
+        margin-top: auto;
+    }
+}

@@ -1,0 +1,24 @@
+.Contacts {
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+    
+    &__listItem {
+        &:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-flow: row;
+        align-items: flex-start;
+    }
+    &__icon {
+        margin-right: 8px;
+    }
+    &__text {
+        font-size: toRem(14px);
+        line-height: 1.2;
+        color: white;
+    }
+}

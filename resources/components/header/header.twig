@@ -1,7 +1,127 @@
 {% import _self as macros %}
 
-{% macro content() %}
-    Header
+{% macro logo() %}
+    <a href="{{ route('home') }}">
+        <img
+            src="{{ 'images/logoBlack.png'|asset }}"
+            alt="Загородный дом"
+        >
+    </a>
 {% endmacro %}
 
-{{macros.content}}
+{% set scope = {
+    menu: [
+        {
+            url: '/',
+            name: 'Реализованные проекты',
+        },
+        {
+            url: '/',
+            name: 'Новости',
+        },
+        {
+            url: '/',
+            name: 'Контакты',
+        },
+    ],
+    phone: '+7 (900) 900-90-90',
+} %}
+
+{% macro phone(value) %}
+    <a class="PrimaryPhone" href="tel:{{ value }}">
+        <img
+            class="PrimaryPhone__icon"
+            src="{{ 'icons/phone.svg'|asset }}"
+            alt="Телефон"
+        >
+        {{ value }}
+    </a>
+{% endmacro %}
+
+{% macro button() %}
+    <button type="button" class="Button Button--primary">
+        Оставить заявку
+    </button>
+{% endmacro %}
+
+{% macro offCanvasButton() %}
+    <button type="button" class="Button Button--primary Button--offCanvasButton" uk-toggle="target: #offcanvas">
+        <img
+            class="OffCanvasButton__icon"
+            src="{{ 'icons/offCanvasButton.svg'|asset }}"
+            alt="" 
+            width="24" 
+            height="14"
+        >
+    </button>
+{% endmacro %}
+
+{% macro contacts(value) %}
+    <a class="PrimaryPhone" href="tel:{{ value }}">
+        <img
+            class="PrimaryPhone__icon"
+            src="{{ 'icons/phone.svg'|asset }}"
+            alt="Телефон"
+        >
+        {{ value }}
+    </a>
+{% endmacro %}
+
+{% macro offCanvas(scope) %}
+    <div id="offcanvas" class="OffCanvas" uk-offcanvas="overlay: true; flip: true">     
+        <div class="OffCanvas__content uk-offcanvas-bar">
+            <button class="uk-offcanvas-close OffCanvas__close" type="button">
+                <img
+                    src="{{ 'icons/crossWhite.svg'|asset }}"
+                    alt=""
+                    height=12;
+                    width=12;
+                >
+            </button>   
+            
+            <div class="OffCanvas__menu">
+                {% include '@components/site-nav/site-nav.twig' with {
+                    items: scope.menu,
+                    vertical: true,
+                } %}
+            </div>
+            
+            <div class="OffCanvas__contacts">
+                {% include '@components/contacts/contacts.twig' %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro content(scope) %}
+    {% import _self as macros %}
+
+    <div class="Container Header">
+        <div class="Header__logo">
+            {{ macros.logo }}
+        </div>
+        
+        <div class="Header__menu">
+            {% include '@components/site-nav/site-nav.twig' with {
+                items: scope.menu,
+                vertical: false,
+            } %}
+        </div>
+        
+        <div class="Header__phone">
+            {{ macros.phone(scope.phone) }}
+        </div>
+        
+        <div class="Header__button">
+            {{ macros.button }}
+        </div>
+        
+        <div class="Header__offCanvasButton">
+            {{ macros.offCanvasButton }}
+        </div>
+    </div>
+
+    {{ macros.offCanvas(scope) }}
+{% endmacro %}
+
+{{ macros.content(scope) }}

@@ -1,0 +1,107 @@
+.Footer {
+    display: grid;
+    grid-template-areas: 
+            "logo menu contacts button"
+            "copyright links links links";
+    grid-template-columns: 24.84% 25.08% 1fr 1fr;
+    grid-gap: 32px 0px;
+        
+    @include vw-md-down {      
+        grid-template-areas: 
+                "logo ."
+                "menu contacts"
+                "button ."
+                "copyright ."
+                "links links";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0px 0px;
+    }
+        
+    @include vw-sm-down {      
+        grid-template-areas: 
+                "logo"
+                "menu"
+                "contacts"
+                "button"
+                "copyright"
+                "links";
+        grid-template-columns: 1fr;
+    }
+    
+    &__logo {
+        padding-top: 5px; 
+        grid-area: logo;
+        width: 160px;
+        
+        @include vw-md-down {  
+            padding-top: 0px; 
+        }
+    }
+    
+    &__menu {   
+        padding-top: 17px;    
+        grid-area: menu;   
+        
+        @include vw-md-down {  
+            padding-top: 40px; 
+        } 
+    }
+    
+    &__contacts {
+        padding-top: 16px;   
+        grid-area: contacts;
+        
+        @include vw-md-down {  
+            padding-top: 40px; 
+        } 
+    }
+    
+    &__button {    
+        grid-area: button;
+        
+        @include vw-md-up {      
+            margin-left: auto;
+        }
+        
+        @include vw-md-down {  
+            padding-top: 40px; 
+        } 
+    }
+    
+    &__copyright {
+        grid-area: copyright;
+        font-size: toRem(14px);
+        color: $color-white;
+        opacity: 0.6;
+        
+        @include vw-md-down {  
+            padding-top: 40px; 
+        } 
+    }
+    
+    &__links {
+        grid-area: links;
+        display: flex;
+        
+        a {
+            color: $color-white;
+        }
+        
+        @include vw-md-up {  
+            padding-left: 6px; 
+        }
+        
+        @include vw-sm-down {      
+            flex-direction: column;
+        }
+    }
+    &__linkItem {
+        font-size: toRem(14px);
+        padding-right: 10.5%; 
+        opacity: 0.6;
+        
+        @include vw-md-down {  
+            padding-top: 16px; 
+        } 
+    }
+}

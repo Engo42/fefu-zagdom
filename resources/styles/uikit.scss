@@ -28,6 +28,13 @@ $button-primary-hover-color: white;
 $button-primary-active-background: darken($button-primary-background, 10%);
 $button-primary-active-color: white;
 
+$button-secondary-background: white;
+$button-secondary-color: $color-green;
+$button-secondary-hover-background: white;
+$button-secondary-hover-color: darken($button-primary-background, 5%);
+$button-secondary-active-background: white;
+$button-secondary-active-color: darken($button-secondary-color, 10%);
+
 $global-font-family: 'Open Sans', sans-serif;
 $base-heading-font-family: 'Montserrat', sans-serif;
 
@@ -47,6 +54,64 @@ $base-heading-font-family: 'Montserrat', sans-serif;
     font-size: toRem(14px);
     line-height: 49px;
     transition: background-color 0.25s ease-in-out;
+}
+@mixin section-title-mix {
+    font-family: $base-heading-font-family;
+    font-weight: $font-weight-bold;
+    font-size: toRem(38px);
+    line-height: 120%;
+    color: $color-black;
+    
+    @include vw-sm-down {
+        font-size: toRem(28px);
+    }
+}
+@mixin overflow-slider-mixin {
+    display: flex;
+    grid-gap: 16px;
+    margin: 0 #{-$container-padding-horizontal};
+    padding-left: $container-padding-horizontal;
+    overflow-x: auto;
+    
+    &::after {
+        content: "";
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: $container-padding-horizontal;
+    }
+}
+
+@mixin vw-sm-up {
+    @media (min-width: 711px) {
+        @content;
+    }
+}
+@mixin vw-sm-down {
+    @media (max-width: 710px) {
+        @content;
+    }
+}
+
+@mixin vw-md-up {
+    @media (min-width: 1137px) {
+        @content;
+    }
+}
+@mixin vw-md-down {
+    @media (max-width: 1136px) {
+        @content;
+    }
+}
+
+@mixin vw-lg-up {
+    @media (min-width: 1221px) {
+        @content;
+    }
+}
+@mixin vw-lg-down {
+    @media (max-width: 1220px) {
+        @content;
+    }
 }
 
 // 4. Import UIkit.

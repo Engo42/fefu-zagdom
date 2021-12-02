@@ -7,10 +7,10 @@
         width: 160px;
         margin-right: 6.3%;
         
-        @media (max-width: 1220px) {
+        @include vw-lg-down {
             margin-right: auto;
         }
-        @media (max-width: 710px) {        
+        @include vw-sm-down {      
             img {
                 height: 33px;
             }
@@ -18,7 +18,7 @@
     }
     
     &__menu {        
-        @media (max-width: 1136px) {
+        @include vw-md-down {
             display: none;
         }
     }
@@ -26,13 +26,13 @@
     &__phone {
         margin-x: auto 24px;
         
-        @media (max-width: 710px) {
+        @include vw-sm-down {  
             display: none;
         }
     }
     
     &__button {    
-        @media (max-width: 710px) {
+        @include vw-sm-down {  
             display: none;
         }    
     }
@@ -40,10 +40,10 @@
     &__offCanvasButton {    
         margin-left: 24px;
         
-        @media (min-width: 1137px) {
+        @include vw-md-up {
             display: none;
         }    
-        @media (max-width: 710px) {    
+        @include vw-sm-down {  
             img {
                 display: block;
             }

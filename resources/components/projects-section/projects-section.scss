@@ -1,0 +1,70 @@
+.ProjectsSection {
+    &__title {
+        margin-bottom: 32px;
+    
+        @include section-title-mix;
+    }
+
+    &__container {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include vw-md-down {
+            @include overflow-slider-mixin;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        background-color: $color-white;
+        border-radius: 20px;
+        overflow: hidden;
+        min-width: 150px;
+        
+        @include vw-md-down {
+            flex-direction: column;
+            flex-shrink: 0;
+            max-width: 280px;
+            width: 80%;
+        }
+    }
+
+    &__textBlock {
+        padding: 30px 16px 30px 30px;
+        
+        @include vw-sm-down {
+            padding: 20px 24px;
+        }
+    }
+
+    &__itemTitle {
+        margin-bottom: 12px;
+    
+        font-weight: $font-weight-medium;
+        font-size: toRem(20px);
+        line-height: 120%;
+    }
+
+    &__itemDescription {
+        font-family: 'Open Sans', 'sans-serif';
+        font-size: toRem(16px);
+        line-height: 135%;
+    }
+
+    &__imageBlock {
+        object-position: center;
+        object-fit: cover;
+        width: 50%;
+        
+        @include vw-md-down {
+            order: -1;
+            width: 100%;
+        }
+        
+        @include vw-sm-down {
+            height: 150px;
+        }
+    }
+}

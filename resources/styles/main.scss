@@ -1,8 +1,11 @@
 //Variables
 $color-black: black;
+$color-white: white;
 $color-gray: #666666;
+$color-gray--light: #C6C6C6;
 $color-green--dark: #254741;
 $color-green: #029F59;
+$color-green--light: #F5F7F3;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -21,8 +24,14 @@ $font-weight-bold: 700;
 
 //Components
 @import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
 @import "../components/site-nav/site-nav.scss";
 @import "../components/contacts/contacts.scss";
+@import "../components/slider/slider.scss";
+@import "../components/featured-section/featured-section.scss";
+@import "../components/projects-section/projects-section.scss";
+@import "../components/news-list/news-list.scss";
+@import "../components/feedback-modal/feedback-modal.scss";
 
 $primary: red;
 $secondary: blue;

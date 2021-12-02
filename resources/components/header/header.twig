@@ -31,7 +31,7 @@
     <a class="PrimaryPhone" href="tel:{{ value }}">
         <img
             class="PrimaryPhone__icon"
-            src="{{ 'icons/phone.svg'|asset }}"
+            src="{{ 'icons/phoneGreen.svg'|asset }}"
             alt="Телефон"
         >
         {{ value }}
@@ -39,7 +39,7 @@
 {% endmacro %}
 
 {% macro button() %}
-    <button type="button" class="Button Button--primary">
+    <button type="button" class="Button Button--primary" data-uk-toggle="#feedback">
         Оставить заявку
     </button>
 {% endmacro %}
@@ -54,17 +54,6 @@
             height="14"
         >
     </button>
-{% endmacro %}
-
-{% macro contacts(value) %}
-    <a class="PrimaryPhone" href="tel:{{ value }}">
-        <img
-            class="PrimaryPhone__icon"
-            src="{{ 'icons/phone.svg'|asset }}"
-            alt="Телефон"
-        >
-        {{ value }}
-    </a>
 {% endmacro %}
 
 {% macro offCanvas(scope) %}

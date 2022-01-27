@@ -1,7 +1,9 @@
 //Variables
 $color-black: black;
 $color-white: white;
+$color-red: red;
 $color-gray: #666666;
+$color-gray--form: #757E8D;
 $color-gray--light: #C6C6C6;
 $color-green--dark: #254741;
 $color-green: #029F59;
@@ -31,7 +33,6 @@ $font-weight-bold: 700;
 @import "../components/featured-section/featured-section.scss";
 @import "../components/projects-section/projects-section.scss";
 @import "../components/news-list/news-list.scss";
-@import "../components/feedback-modal/feedback-modal.scss";
 
 $primary: red;
 $secondary: blue;

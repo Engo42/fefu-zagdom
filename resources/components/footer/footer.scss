@@ -3,7 +3,7 @@
     grid-template-areas: 
             "logo menu contacts button"
             "copyright links links links";
-    grid-template-columns: 24.84% 25.08% 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 32px 0px;
         
     @include vw-md-down {      
